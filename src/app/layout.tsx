@@ -13,11 +13,11 @@ const display = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Dennys — Aspiring AI Engineer",
+  title: "Dennys — Software Engineer",
   description:
-    "Dennys is an aspiring AI engineer. Using AI productively isn't the hard part — knowing how it works is. Self-taught → Pursuit → CUNY SPS, building real projects the whole way.",
+    "Dennys is a software engineer who builds with AI and understands what's under it. Self-taught → Pursuit → CUNY SPS, shipping real projects the whole way.",
   openGraph: {
-    title: "Dennys — Aspiring AI Engineer",
+    title: "Dennys — Software Engineer",
     description:
       "I build with AI. I understand what's under it. Real code, real projects, real discipline.",
     type: "website",

@@ -44,7 +44,7 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-6xl">
         <div data-fade className="mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-muted">
           <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime" />
-          {"// aspiring ai engineer"}
+          {"// software engineer"}
         </div>
 
         <h1 className="display text-paper">
