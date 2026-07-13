@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
 
 const links = [
+  { label: "Story", href: "#journey" },
   { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -33,10 +33,10 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-12">
         <button
           onClick={() => scrollTo("#top")}
-          className="font-display text-lg font-bold tracking-tight text-paper"
+          className="font-display text-lg font-semibold tracking-tight text-paper"
           aria-label="Back to top"
         >
-          D<span className="text-lime">A</span>
+          dennys<span className="text-lime">.ai</span>
         </button>
 
         <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-1.5 py-1.5 backdrop-blur-sm">

@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Nav from "@/components/Nav";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const sans = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const mono = JetBrains_Mono({ variable: "--font-jbmono", subsets: ["latin"] });
 const display = Space_Grotesk({
-  variable: "--font-display",
+  variable: "--font-grotesk",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Dennys — Software Engineer",
+  title: "Dennys — Aspiring AI Engineer",
   description:
-    "Dennys Antunish is an AI-focused software engineer building intelligent, interactive products — from a talking 3D AI to full-stack systems.",
+    "Dennys is an aspiring AI engineer. Using AI productively isn't the hard part — knowing how it works is. Self-taught → Pursuit → CUNY SPS, building real projects the whole way.",
   openGraph: {
-    title: "Dennys — Software Engineer",
+    title: "Dennys — Aspiring AI Engineer",
     description:
-      "AI-focused software engineer building intelligent, interactive products.",
+      "I build with AI. I understand what's under it. Real code, real projects, real discipline.",
     type: "website",
   },
 };
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${display.variable}`}
+      className={`${sans.variable} ${mono.variable} ${display.variable}`}
     >
       <body className="grain min-h-dvh bg-ink">
         <SmoothScroll>

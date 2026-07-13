@@ -44,29 +44,31 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-6xl">
         <div data-fade className="mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-muted">
           <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime" />
-          Portfolio — 2026
+          {"// aspiring ai engineer"}
         </div>
 
         <h1 className="display text-paper">
           <span className="block overflow-hidden">
-            <span data-line className="block will-reveal text-[clamp(3.5rem,16vw,15rem)]">
+            <span data-line className="block will-reveal text-[clamp(3rem,13vw,12rem)]">
               DENNYS
             </span>
           </span>
         </h1>
 
-        <div className="overflow-hidden">
-          <p
-            data-line
-            className="mt-2 font-mono text-[clamp(0.9rem,2.4vw,1.6rem)] uppercase tracking-[0.35em] text-lime text-glow-lime"
-          >
-            Software&nbsp;Engineer
+        <div className="mt-4 overflow-hidden">
+          <p data-line className="display text-[clamp(1.35rem,3.6vw,2.6rem)] leading-tight text-paper">
+            I build with AI.{" "}
+            <span className="text-lime text-glow-lime">
+              I understand what&apos;s under it.
+            </span>
           </p>
         </div>
 
-        <p data-fade className="mt-8 max-w-xl text-lg leading-relaxed text-muted md:text-xl">
-          I build intelligent, interactive products — from a talking 3D AI to
-          full-stack systems and responsible-AI tooling.
+        <p data-fade className="mt-7 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+          Using AI productively isn&apos;t the hard part — knowing how it works
+          is. I&apos;ve spent the last few years closing that gap: writing real
+          code, shipping real projects, and staying disciplined enough to keep
+          going when it got hard.
         </p>
 
         <div data-fade className="mt-10 flex flex-wrap items-center gap-4">

@@ -1,7 +1,8 @@
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import Journey from "@/components/Journey";
+import Strengths from "@/components/Strengths";
 import Projects from "@/components/Projects";
-import About from "@/components/About";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -9,8 +10,9 @@ export default function Home() {
     <main>
       <Hero />
       <Marquee />
+      <Journey />
+      <Strengths />
       <Projects />
-      <About />
       <Contact />
     </main>
   );
