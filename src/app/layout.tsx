@@ -33,6 +33,7 @@ export default function RootLayout({
       className={`${sans.variable} ${mono.variable} ${display.variable}`}
     >
       <body className="grain min-h-dvh bg-ink">
+        <div className="starfield" aria-hidden="true" />
         <SmoothScroll>
           <Nav />
           {children}
