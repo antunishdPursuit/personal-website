@@ -71,11 +71,11 @@ export default function ParticleField() {
   return (
     <Canvas
       camera={{ position: [0, 0, 6], fov: 45 }}
-      dpr={[1, 2]}
+      dpr={[1, 1.25]}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
     >
-      <Cloud count={2600} min={2.4} max={4.2} color="#c6ff3a" size={0.02} speed={0.04} opacity={0.85} />
-      <Cloud count={1400} min={1.2} max={2.4} color="#22d3ee" size={0.018} speed={0.06} opacity={0.6} />
+      <Cloud count={1800} min={2.4} max={4.2} color="#c6ff3a" size={0.02} speed={0.04} opacity={0.85} />
+      <Cloud count={900} min={1.2} max={2.4} color="#22d3ee" size={0.018} speed={0.06} opacity={0.6} />
     </Canvas>
   );
 }
