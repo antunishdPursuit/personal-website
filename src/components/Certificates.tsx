@@ -52,6 +52,9 @@ export default function Certificates() {
             data-cert
             className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.02] p-8 transition-colors duration-300 hover:border-lime/40"
           >
+            <div className="credential-placeholder mb-7 aspect-[16/9]" aria-label={`${c.name} credential image placeholder`}>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan">Credential image // coming soon</span>
+            </div>
             <h3 className="display text-xl text-paper transition-colors group-hover:text-lime">
               {c.name}
             </h3>
