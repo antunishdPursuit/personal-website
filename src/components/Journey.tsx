@@ -3,101 +3,26 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 const chapters = [
-  {
-    tag: "chapter 01",
-    title: "Tech Fellow",
-    body: "I became a Tech Fellow to stay at the front edge of AI — and to help pull the next generation of students up with me. Along the way I shipped multiple AI projects and learned something just as valuable: how to explain technical ideas clearly to people who aren't in the weeds with you.",
-  },
-  {
-    tag: "chapter 02",
-    title: "Pursuit",
-    body: "Pursuit gave me the technical grounding to actually understand how code works — not just how to use it. That foundation changed how I approach AI: I'm not just prompting tools on the surface, I understand what's happening underneath them.",
-  },
-  {
-    tag: "chapter 03",
-    title: "CUNY SPS — B.S. Information Systems",
-    body: "This degree took years of discipline, late nights, and pushing through when quitting would've been easier. It's where I learned to be a go-getter — and where my technical expertise became something I could actually stand behind on a team.",
-  },
+  ["01 · Jan 2023 — Dec 2024", "Pursuit", "Software foundations", "I came to Pursuit to become a software engineer: to understand how code works and build a real technical foundation."],
+  ["02 · Jan 2025 — May 2026", "CUNY SPS", "Systems and persistence", "My degree strengthened that foundation through systems thinking, persistence, and technical work I could stand behind on a team."],
+  ["03 · Jul 2026 — Present", "CodePath Tech Fellow", "Build and teach", "I apply what I know in public: shipping AI projects and helping learners make sense of technical ideas without losing the details that matter."],
+  ["04 · Jul 2026 — Present", "Pursuit", "AI builder", "Returning to Pursuit is not a restart. It is the next orbit—using my foundations to build AI systems that are useful, explainable, and grounded in how they actually work."],
 ];
 
 export default function Journey() {
   const root = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from("[data-chapter]", {
-          y: 60,
-          opacity: 0,
-          duration: 0.9,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: { trigger: root.current, start: "top 70%" },
-        });
-        gsap.from("[data-journey-line]", {
-          scaleY: 0,
-          transformOrigin: "top",
-          duration: 1.4,
-          ease: "power2.out",
-          scrollTrigger: { trigger: root.current, start: "top 70%" },
-        });
-      });
-    }, root);
-    return () => ctx.revert();
-  }, []);
-
-  return (
-    <section
-      ref={root}
-      id="journey"
-      className="mx-auto max-w-6xl px-6 py-28 md:px-12 md:py-40"
-    >
-      <div className="mb-16 border-b border-white/10 pb-6">
-        <span className="font-mono text-xs uppercase tracking-[0.3em] text-lime">
-          {"// the journey"}
-        </span>
-        <h2 className="display mt-4 text-[clamp(2.5rem,7vw,5.5rem)] text-paper">
-          How I got here
-        </h2>
-      </div>
-
-      <div className="relative pl-8 md:pl-0">
-        {/* vertical spine (mobile) */}
-        <span
-          data-journey-line
-          className="absolute left-[3px] top-2 h-full w-px bg-gradient-to-b from-lime via-cyan/40 to-transparent md:hidden"
-        />
-
-        <ol className="flex flex-col gap-14 md:gap-20">
-          {chapters.map((c) => (
-            <li
-              key={c.tag}
-              data-chapter
-              className="relative grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-10"
-            >
-              {/* node (mobile) */}
-              <span className="absolute -left-8 top-2 h-2 w-2 rounded-full bg-lime md:hidden" />
-
-              <div className="md:col-span-4">
-                <span className="inline-block rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-xs uppercase tracking-wider text-cyan">
-                  {c.tag}
-                </span>
-                <h3 className="display mt-4 text-2xl text-paper md:text-3xl">
-                  {c.title}
-                </h3>
-              </div>
-
-              <p className="max-w-2xl leading-relaxed text-muted md:col-span-8 md:text-lg">
-                {c.body}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
-  );
+  useEffect(() => { const ctx = gsap.context(() => { gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => gsap.from("[data-chapter]", { y: 40, opacity: 0, stagger: 0.14, duration: 0.8, scrollTrigger: { trigger: root.current, start: "top 70%" } })); }, root); return () => ctx.revert(); }, []);
+  return <section ref={root} id="journey" className="mx-auto max-w-6xl px-6 py-28 md:px-12 md:py-40">
+    <div className="mb-16 border-b border-white/10 pb-6"><span className="font-mono text-xs uppercase tracking-[0.3em] text-lime">{"// the journey"}</span><h2 className="display mt-4 text-[clamp(2.5rem,7vw,5.5rem)] text-paper">How I got here</h2></div>
+    <ol className="relative space-y-8 before:absolute before:bottom-8 before:left-3 before:top-8 before:w-px before:bg-gradient-to-b before:from-lime before:via-cyan/50 before:to-lime md:before:left-1/2">
+      {chapters.map(([tag, title, subtitle, body], index) => <li key={tag} data-chapter className="relative grid gap-5 pl-10 md:grid-cols-2 md:gap-16 md:pl-0">
+        <span className="absolute left-0 top-2 h-7 w-7 rounded-full border-4 border-ink bg-lime shadow-[0_0_20px_rgba(198,255,58,.45)] md:left-1/2 md:-translate-x-1/2" />
+        <div className={index % 2 ? "md:col-start-2" : ""}><span className="font-mono text-xs uppercase tracking-wider text-cyan">{tag}</span><h3 className="display mt-3 text-3xl text-paper">{title}</h3><p className="mt-2 font-mono text-xs uppercase tracking-[0.18em] text-muted">{subtitle}</p></div>
+        <div className={`orbit-panel ${index === 3 ? "orbit-return" : ""} ${index % 2 ? "md:col-start-1 md:row-start-1" : ""}`}><p className="leading-relaxed text-muted md:text-lg">{body}</p>{index === 3 ? <span className="orbit-return-line" aria-hidden="true" /> : null}</div>
+      </li>)}
+    </ol>
+  </section>;
 }

@@ -59,11 +59,11 @@ export default function Projects() {
             </div>
 
             <div className="md:col-span-5">
-              <h3
-                className={`display text-4xl text-paper transition-colors md:text-6xl ${
-                  p.accent === "lime" ? "group-hover:text-lime" : "group-hover:text-cyan"
-                }`}
-              >
+              <div className="mission-window mb-7 aspect-[16/10]" aria-label={`${p.title} project image placeholder`}>
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyan">Project image // coming soon</span>
+                <span className="mission-window-orbit" aria-hidden="true" />
+              </div>
+              <h3 className="display text-4xl text-paper transition-colors group-hover:text-lime md:text-6xl">
                 {p.title}
               </h3>
               <p className="mt-3 text-lg text-muted">{p.tagline}</p>
@@ -88,11 +88,7 @@ export default function Projects() {
                     href={l.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 text-sm font-medium transition-colors ${
-                      p.accent === "lime"
-                        ? "text-paper hover:text-lime"
-                        : "text-paper hover:text-cyan"
-                    }`}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-paper transition-colors hover:text-lime"
                   >
                     {l.label} ↗
                   </a>

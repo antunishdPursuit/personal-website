@@ -2,8 +2,8 @@
 
 /* ---- Design tokens ---------------------------------------------------- */
 :root {
-  --ink: #0a0a0a;
-  --ink-soft: #101010;
+  --ink: #070a12;
+  --ink-soft: #0e1421;
   --lime: #c6ff3a;
   --cyan: #22d3ee;
   --paper: #f5f5f5;
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background: var(--ink);
+  background: radial-gradient(circle at 70% 15%, rgba(24, 61, 86, 0.17), transparent 28rem), radial-gradient(circle at 15% 65%, rgba(65, 51, 105, 0.12), transparent 32rem), var(--ink);
   color: var(--paper);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -58,6 +58,8 @@ body {
 .text-glow-lime {
   text-shadow: 0 0 24px color-mix(in srgb, var(--lime) 55%, transparent);
 }
+
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
 
 /* Grain overlay */
 .grain::after {
@@ -96,7 +98,7 @@ body {
     radial-gradient(1px 1px at 250px 20px, rgba(245, 245, 245, 0.5), transparent 60%),
     radial-gradient(1px 1px at 20px 150px, rgba(34, 211, 238, 0.4), transparent 60%);
   background-size: 380px 380px;
-  opacity: 0.62;
+  opacity: 0.48;
 }
 .starfield::after {
   content: "";
@@ -165,3 +167,15 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee { animation: none; }
 }
+
+.orbit-panel, .signal-console { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.1); border-radius: 1rem; background: linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.012)); }
+.orbit-panel { padding: 1.5rem; }
+.orbit-return { border-color: rgba(198,255,58,.35); }
+.orbit-return-line { position:absolute;right:1rem;top:1rem;height:3.5rem;width:3.5rem;border-right:1px solid rgba(198,255,58,.45);border-top:1px solid rgba(198,255,58,.45);border-radius:0 100% 0 0; }
+.signal-console { padding: clamp(1.5rem,4vw,3rem); }
+.signal-label { display:block;margin-bottom:.5rem;font-family:var(--font-jbmono),monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan); }
+.signal-button { display:grid;min-height:2.75rem;min-width:2.75rem;place-items:center;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--paper);transition:180ms ease; }
+.signal-button:hover { border-color:var(--lime);color:var(--lime);transform:translateY(-2px); }
+.mission-window,.credential-placeholder { position:relative;display:grid;place-items:center;overflow:hidden;border:1px solid rgba(34,211,238,.25);border-radius:.9rem;background:radial-gradient(circle at 72% 25%,rgba(34,211,238,.18),transparent 20%),radial-gradient(circle at 28% 78%,rgba(198,255,58,.12),transparent 24%),linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.008)); }
+.mission-window-orbit { position:absolute;height:150%;width:56%;border:1px solid rgba(198,255,58,.32);border-radius:50%;transform:rotate(-32deg); }
+.credential-placeholder { border-color:rgba(255,255,255,.12); }
