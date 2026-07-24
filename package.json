@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:publish": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-before-publish.ps1"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
