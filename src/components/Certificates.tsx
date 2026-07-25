@@ -36,7 +36,7 @@ export default function Certificates() {
       id="certificates"
       className="mx-auto max-w-6xl px-6 py-28 md:px-12 md:py-40"
     >
-      <div className="mb-16 border-b border-white/10 pb-6">
+      <div className="theme-rule mb-16 border-b pb-6">
         <span className="font-mono text-xs uppercase tracking-[0.3em] text-lime">
           {"// certificates"}
         </span>
@@ -50,7 +50,7 @@ export default function Certificates() {
           <article
             key={`${c.name}-${c.org}`}
             data-cert
-            className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.02] p-8 transition-colors duration-300 hover:border-lime/40"
+            className="theme-panel group flex flex-col rounded-2xl border p-8 transition-colors duration-300 hover:border-lime/40"
           >
             <div className="credential-placeholder mb-7 aspect-[16/9]" aria-label={`${c.name} credential image placeholder`}>
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan">Credential image // coming soon</span>

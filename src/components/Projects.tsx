@@ -38,7 +38,7 @@ export default function Projects() {
 
   return (
     <section ref={root} id="work" className="relative mx-auto max-w-6xl px-6 py-28 md:px-12 md:py-40">
-      <div data-work-head className="mb-16 flex items-end justify-between gap-6 border-b border-white/10 pb-6">
+      <div data-work-head className="theme-rule mb-16 flex items-end justify-between gap-6 border-b pb-6">
         <h2 className="display text-[clamp(2.5rem,7vw,6rem)] text-paper">
           Selected<span className="text-lime">.</span>
         </h2>
@@ -52,7 +52,7 @@ export default function Projects() {
           <article
             key={p.id}
             data-project
-            className="group grid grid-cols-1 gap-6 border-b border-white/10 py-12 md:grid-cols-12 md:gap-10"
+            className="theme-rule group grid grid-cols-1 gap-6 border-b py-12 md:grid-cols-12 md:gap-10"
           >
             <div className="md:col-span-1">
               <span className="font-mono text-sm text-muted">{p.index}</span>
@@ -71,7 +71,7 @@ export default function Projects() {
                 {p.tech.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border border-white/10 px-3 py-1 font-mono text-xs text-muted"
+                    className="theme-chip rounded-full border px-3 py-1 font-mono text-xs text-muted"
                   >
                     {t}
                   </span>
