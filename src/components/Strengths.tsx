@@ -49,7 +49,7 @@ export default function Strengths() {
       id="strengths"
       className="mx-auto max-w-6xl px-6 py-28 md:px-12 md:py-40"
     >
-      <div className="mb-16 border-b border-white/10 pb-6">
+      <div className="theme-rule mb-16 border-b pb-6">
         <span className="font-mono text-xs uppercase tracking-[0.3em] text-lime">
           {"// what I bring"}
         </span>
@@ -63,7 +63,7 @@ export default function Strengths() {
           <article
             key={s.tag}
             data-strength
-            className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.02] p-8 transition-colors duration-300 hover:border-lime/40"
+            className="theme-panel group flex flex-col rounded-2xl border p-8 transition-colors duration-300 hover:border-lime/40"
           >
             <span className="font-mono text-xs uppercase tracking-wider text-cyan">
               {s.tag}

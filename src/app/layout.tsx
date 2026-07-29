@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Nav from "@/components/Nav";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const sans = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const mono = JetBrains_Mono({ variable: "--font-jbmono", subsets: ["latin"] });
@@ -27,17 +29,43 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const themeScript = `
+    (() => {
+      try {
+        const stored = localStorage.getItem("portfolio-environment");
+        const theme = stored === "space" || stored === "ocean"
+          ? stored
+          : matchMedia("(prefers-color-scheme: light)").matches
+            ? "ocean"
+            : "space";
+        document.documentElement.dataset.environment = theme;
+        document.documentElement.style.colorScheme =
+          theme === "ocean" ? "light" : "dark";
+      } catch {
+        document.documentElement.dataset.environment = "space";
+        document.documentElement.style.colorScheme = "dark";
+      }
+    })();
+  `;
+
   return (
     <html
       lang="en"
       className={`${sans.variable} ${mono.variable} ${display.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <Script id="environment-theme" strategy="beforeInteractive">
+          {themeScript}
+        </Script>
+      </head>
       <body className="grain min-h-dvh bg-ink">
-        <div className="starfield" aria-hidden="true" />
-        <SmoothScroll>
-          <Nav />
-          {children}
-        </SmoothScroll>
+        <ThemeProvider>
+          <SmoothScroll>
+            <Nav />
+            {children}
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );
